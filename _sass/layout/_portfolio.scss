@@ -145,6 +145,10 @@
       transform: scale(1.5);
     }
 
+    .list-group {
+      max-height: 150px;
+      margin-bottom: 10px;
+    }
   }
 
   .close-modal {
