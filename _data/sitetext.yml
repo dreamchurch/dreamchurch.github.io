@@ -54,10 +54,11 @@ en: &DEFAULT_EN
         desc: '젊은 시절 세종대학교 영화예술학과를 졸업하고 대중가수의 길을 걷다, 하나님의 부르심에 순종하여 목원대학교 신학대학원을 졸업하여 목사 안수를 받고 다년 간의 훈련 기간을 거쳐, 2016년 꿈이 있는 교회를 개척하였습니다.'
         icon: fas fa-user-tie
       - title: '교회 위치'
-        desc: '[대전 서구 도안동 1830]<br>
-          BUS : 급행3, 114, 115 <br>
-          [위치 지도](http://naver.me/5IlzUwRO)'
+        desc: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12860.210561182388!2d127.33640481407936!3d36.31103030355057!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35654c4e626d4429%3A0x2969233db3e9a2b6!2z64yA7KCE6rSR7Jet7IucIOyEnOq1rCDrj4TslYjrj5kgMTgzMA!5e0!3m2!1sko!2skr!4v1679639270301!5m2!1sko!2skr" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        [대전 서구 도안동 1830]<br> 
+        [버스: 급행3, 114, 115]'
         icon: fas fa-search-location
+        # [위치 지도](http://naver.me/5IlzUwRO)
         # image: assets/img/map_01.png
 
   portfolio:
