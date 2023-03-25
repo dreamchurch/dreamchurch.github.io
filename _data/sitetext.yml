@@ -81,25 +81,25 @@ en: &DEFAULT_EN
     # left is the default
     #start_align: "left"
     events:
-      - title: 'Our Humble Beginnings'
-        year: '2009-2011'
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!'
-        image: assets/img/timeline/1.jpg
+      - title: '네 시작은 미약하나 ~'
+        year: '2016.10.2 ~ '
+        desc: '첫 주일 예배첫 주일 예배로 서득성 장로의 집(서구 내동 코오롱APT)에서 모이다.'
+        image: assets/img/timeline/161030.png
         alt:
-      - title: 'An Agency is Born'
-        year: 'March 2011'
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!'
-        image: assets/img/timeline/2.jpg
+      - title: '네 장막 터를 넓히라!'
+        year: '2017.10.2 ~ '
+        desc: '개척 1주년 & 도마동 성전으로 예배 장소 이전(도솔로 85)'
+        image: assets/img/timeline/171001.png
         alt:
-      - title: 'Jekyll Theme is created'
-        year: '2019'
-        desc: 'Ravi Riley converted Agency, a Bootstrap-based theme, into a Jekyll theme. The Jekyll theme can be installed as a Ruby gem, or remotely. For more information, visit the documentation.'
-        image: assets/img/timeline/3.jpg
+      - title: '성전건축 시작'
+        year: '2020.11.30'
+        desc: '도안동 1830 부지에 4층 건물(1층 성전, 2층 교육관, 2~4층 다세대 주택 4가구) 착공. 12.13부터 다시 서득성 장로의 집으로 예배 장소 이전.'
+        image: assets/img/timeline/201130.png
         alt: image alt text
-      - title: 'Title'
-        year: '2009-2011'
-        desc: 'Your description here, **Markdown** is fully supported.'
-        image: assets/img/timeline/4.jpg
+      - title: '성전 준공'
+        year: '2021.6월'
+        desc: '준공 뒤 성전 인테리어 공사하여 2022.2.6에 새 성전에서 첫 주일 예배를 드림.'
+        image: assets/img/timeline/230312.png
         alt:
         # you can enforce the alignment
         align: right
