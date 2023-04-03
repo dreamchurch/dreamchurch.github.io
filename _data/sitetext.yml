@@ -70,8 +70,18 @@ en: &DEFAULT_EN
   about:
     title: 'About us'
     text: '우리의 이야기'
-    body: '꿈이 있는 교회는, 이 땅에 예수님의 뜻을 이루어 드리는 교회가 되고 싶습니다. 찬양에 강점이 있는 교회이며, 구성원들이 어린아이 젊은이 중장년 노년에 이르기까지 골고루 구성되어, 누구나 쉽게 어울리고 친해질 수 있는 분위기 입니다.'
-    image: https://coresos-phinf.pstatic.net/a/34h40c/g_8deUd018svc1j9lth07zvnsa_twdwn8.jpg?type=e1920_std&cors=band
+    body:
+      '꿈이 있는 교회는<br>
+      이 땅에 예수님의 꿈을 이루어 드리는 교회가 되고 싶습니다.<br>
+      찬양에 강점이 있는 교회이며<br>
+      구성원들이 어린아이 젊은이 중장년 노년에 이르기까지 골고루 구성되어<br>
+      누구나 쉽게 어울리고 친해질 수 있는 분위기 입니다.'
+    carousel:
+      id: "carousel_about"
+      images:
+        - image: "https://coresos-phinf.pstatic.net/a/34h40c/g_8deUd018svc1j9lth07zvnsa_twdwn8.jpg?type=e1920_std&cors=band"
+        - image: "https://coresos-phinf.pstatic.net/a/350194/e_g42Ud018svc5dbo4e30ajhp_twdwn8.jpg?type=e1920_std&cors=band"
+        - image: "https://coresos-phinf.pstatic.net/a/356476/8_d25Ud018svc1g4q8vj8hqneo_f0v73q.jpg?type=e1920_std&cors=band"
     section: about
 
   timeline:

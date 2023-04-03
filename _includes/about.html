@@ -5,12 +5,13 @@
     <div class="row">
       <div class="col-lg-12 text-center">
         <h2 class="section-heading text-uppercase">{{ site.data.sitetext[site.locale].about.title | default: "About Us" }}</h2>
-        <h3 class="section-subheading text-muted">{{ site.data.sitetext[site.locale].about.text | default: "" }}</h3>
+        <h3 class="section-subheading text-muted mb-5">{{ site.data.sitetext[site.locale].about.text | default: "" }}</h3>
       </div>
     </div>
     <div class="row">
+      {% include carousel_site.html %}
       <div class="col-lg-8 mx-auto text-center">
-        <img class="img-fluid mb-3" src="{{ site.data.sitetext[site.locale].about.image }}" alt="단체사진">
+        <!-- <img class="img-fluid mb-3" src="{{ site.data.sitetext[site.locale].about.image }}" alt="단체사진"> -->
         <div class="large text-muted">{{ site.data.sitetext[site.locale].about.body | markdownify }}</div>
       </div>
     </div>
