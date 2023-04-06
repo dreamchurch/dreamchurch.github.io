@@ -1,0 +1,16 @@
+#about {
+  .carousel-indicators li {
+    width: 13px;
+    height: 13px;
+    margin-right: 5px;
+    margin-left: 5px;
+    border-radius: 50%;
+    border: 0;
+    background-color: #fff;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    transform: scale(1.5);
+  }
+}
