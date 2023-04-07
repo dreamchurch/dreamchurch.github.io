@@ -33,17 +33,17 @@ site.locale != nil %}
               <div class="text-left mb-4">
                 {{ project.content }}
               </div>
-              <button
-              class="btn btn-primary text-center"
-              data-dismiss="modal"
-              type="button"
-              >
-              <i class="fas fa-times"></i>
-              {{ site.data.sitetext[site.locale].portfolio.closebutton |
-                default: "Close Project" }}
-              </button>
             </div>
-            <div class="mt-4 col-lg-8 col-md-8 col-sm-12">{% include load-more.html %}</div>
+            <div class="mb-4 col-lg-8 col-md-8 col-sm-12">{% include load-more.html %}</div>
+            <button
+            class="btn btn-primary text-center"
+            data-dismiss="modal"
+            type="button"
+            >
+            <i class="fas fa-times"></i>
+            {{ site.data.sitetext[site.locale].portfolio.closebutton |
+              default: "Close Project" }}
+            </button>
           </div>
         </div>
       </div>

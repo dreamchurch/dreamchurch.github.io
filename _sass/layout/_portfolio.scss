@@ -82,7 +82,7 @@
 }
 
 .portfolio-modal {
-  overflow-y: auto;
+  // overflow-y: auto;
 
   .modal-dialog {
     margin: 1rem;
@@ -90,7 +90,7 @@
   }
 
   .modal-content {
-    padding: 100px 0;
+    padding: 50px 0;
     text-align: center;
 
     h2 {
@@ -154,9 +154,9 @@
   .close-modal {
     position: absolute;
     top: 25px;
-    right: 25px;
-    width: 75px;
-    height: 75px;
+    right: 50px;
+    width: 30px;
+    height: 30px;
     cursor: pointer;
     background-color: transparent;
 
@@ -168,7 +168,7 @@
       /* Safari and Chrome */
       z-index: 1051;
       width: 1px;
-      height: 75px;
+      height: 30px;
       margin-left: 35px;
       /* IE 9 */
       -webkit-transform: rotate(45deg);
@@ -180,7 +180,7 @@
         /* Safari and Chrome */
         z-index: 1052;
         width: 1px;
-        height: 75px;
+        height: 30px;
         /* IE 9 */
         -webkit-transform: rotate(90deg);
         -ms-transform: rotate(90deg);
