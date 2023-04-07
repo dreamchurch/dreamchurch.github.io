@@ -90,7 +90,7 @@
   }
 
   .modal-content {
-    padding: 50px 0;
+    padding: 10px 0 30px;
     text-align: center;
 
     h2 {
@@ -153,8 +153,9 @@
 
   .close-modal {
     position: absolute;
-    top: 25px;
-    right: 50px;
+    z-index: 1053;
+    top: 30px;
+    right: 30px;
     width: 30px;
     height: 30px;
     cursor: pointer;
@@ -169,7 +170,7 @@
       z-index: 1051;
       width: 1px;
       height: 30px;
-      margin-left: 35px;
+      margin-left: 15px;
       /* IE 9 */
       -webkit-transform: rotate(45deg);
       -ms-transform: rotate(45deg);
