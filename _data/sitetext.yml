@@ -12,7 +12,7 @@
 en: &DEFAULT_EN
   header:
     title: 꿈이 있는 교회로 초대합니다!
-    text: 예수님이 이 땅의 꿈입니다.
+    text: 예수님이 우리의 꿈입니다.
     button: 간략 정보
     image: /assets/img/header-bg.jpg
     buttonlink: '#services'
