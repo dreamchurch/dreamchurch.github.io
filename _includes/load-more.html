@@ -2,14 +2,14 @@
 <h5 class="text-muted">지난 설교 보기</h5>
 <div class="list-group list-group-flush overflow-auto">
   {% for related in site.portfolio reversed %} {% if related.category ==
-  'sermon' and related.date != project.date %}
+  'sermon' and related.date != project.date and forloop.index < 20 %}
   <a
     class="list-group-item list-group-item-action text-left"
     data-dismiss="modal"
     data-toggle="modal"
     href="#p{{ forloop.length | minus: forloop.index0 }}"
   >
-    {{ related.subtitle }} {{ related.date | date: "%F" }}
+    {{ related.subtitle }} {{ related.date | date: "%F" }} {{ forloop.index }}
   </a>
   {% endif %} {% endfor %}
 </div>
@@ -17,7 +17,7 @@
 <h5 class="text-muted">지난 찬양 보기</h5>
 <div class="list-group list-group-flush overflow-auto">
   {% for related in site.portfolio reversed %} {% if related.category ==
-  'praise' and related.date != project.date %}
+  'praise' and related.date != project.date and forloop.index < 20 %}
   <a
     class="list-group-item list-group-item-action text-left"
     data-dismiss="modal"
@@ -32,7 +32,7 @@
 <h5 class="text-muted">지난 소식 보기</h5>
 <div class="list-group list-group-flush overflow-auto">
   {% for related in site.portfolio reversed %} {% if related.category == 'blog'
-  and related.subtitle != project.subtitle %}
+  and related.subtitle != project.subtitle and forloop.index < 20 %}
   <a
     class="list-group-item list-group-item-action text-left"
     data-dismiss="modal"
