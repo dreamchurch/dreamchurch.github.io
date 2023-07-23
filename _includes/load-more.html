@@ -9,7 +9,7 @@
     data-toggle="modal"
     href="#p{{ forloop.length | minus: forloop.index0 }}"
   >
-    {{ related.subtitle }} {{ related.date | date: "%F" }} {{ forloop.index }}
+    {{ related.subtitle }} {{ related.date | date: "%F" }}
   </a>
   {% endif %} {% endfor %}
 </div>
