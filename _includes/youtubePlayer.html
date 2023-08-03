@@ -1,10 +1,17 @@
 <div class="embed-container">
-  <iframe
-    src="https://www.youtube.com/embed/{{ include.id }}"
-    width="560"
-    height="315"
-    frameborder="0"
-    allowfullscreen="true"
-  >
-  </iframe>
+  <a href="https://www.youtube.com/embed/{{ include.id }}">
+    <img
+      src="https://img.youtube.com/vi/{{ include.id }}/maxresdefault.jpg"
+      alt="{{ include.subtitle }}"
+    />
+  </a>
 </div>
+
+<!-- <iframe
+  src="https://www.youtube.com/embed/{{ include.id }}"
+  width="560"
+  height="315"
+  frameborder="0"
+  allowfullscreen="true"
+>
+</iframe> -->

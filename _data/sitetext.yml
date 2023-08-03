@@ -79,10 +79,10 @@ en: &DEFAULT_EN
     carousel:
       id: "carousel_about"
       images:
-        - image: "https://coresos-phinf.pstatic.net/a/34h40c/g_8deUd018svc1j9lth07zvnsa_twdwn8.jpg?type=e1920_std&cors=band"
-        - image: "https://coresos-phinf.pstatic.net/a/356476/8_d25Ud018svc1g4q8vj8hqneo_f0v73q.jpg?type=e1920_std&cors=band"
-        - image: "https://coresos-phinf.pstatic.net/a/35d51i/h_ihfUd018svc13hy5aylzfok1_f0v73q.jpg?type=e1920_std&cors=band"
         - image: "https://coresos-phinf.pstatic.net/a/360h39/c_a7fUd018svck18fedezk9qc_f0v73q.jpg?type=e1920_std&cors=band"
+        - image: "https://coresos-phinf.pstatic.net/a/35d51i/h_ihfUd018svc13hy5aylzfok1_f0v73q.jpg?type=e1920_std&cors=band"
+        - image: "https://coresos-phinf.pstatic.net/a/356476/8_d25Ud018svc1g4q8vj8hqneo_f0v73q.jpg?type=e1920_std&cors=band"
+        - image: "https://coresos-phinf.pstatic.net/a/34h40c/g_8deUd018svc1j9lth07zvnsa_twdwn8.jpg?type=e1920_std&cors=band"
     section: about
 
   timeline:
