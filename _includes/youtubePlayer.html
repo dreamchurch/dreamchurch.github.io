@@ -1,5 +1,10 @@
 <div class="embed-container">
-  <a href="https://youtu.be/{{ include.id }}">
+  <a class="embed-link" href="https://youtu.be/{{ include.id }}">
+    <div class="embed-hover">
+      <div class="embed-hover-content">
+        <i class="fa-solid fa-play fa-3x"></i>
+      </div>
+    </div>
     <img
       src="https://img.youtube.com/vi/{{ include.id }}/maxresdefault.jpg"
       alt="{{ include.subtitle }}"

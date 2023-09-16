@@ -18,7 +18,7 @@ baseurl: '/' # the subpath of your site, e.g. /blog
 
 title: Dream Church
 email: ct1799@hanmail.net #this is also the email contact forms will go to
-description: '꿈이있는 교회(대전 서구 도안동) Homepage 0.3'
+description: '꿈이있는 교회(대전 서구 도안동 1830, 담임목사: 서민우)'
 author: Taeseok Sim
 # logo:     #optional, defaults to site title
 # path: assets\img\clients\creative-market.jpg
