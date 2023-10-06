@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>https://dreamchurch.github.io/</loc>
+<loc>http://localhost:4000/</loc>
 </url>
 <url>
-<loc>https://dreamchurch.github.io/legal.html</loc>
+<loc>http://localhost:4000/legal.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/naver43264b1b242d3775cc54f30256ff02f6.html</loc>
+<lastmod>2023-04-14T20:12:24+09:00</lastmod>
 </url>
 </urlset>
