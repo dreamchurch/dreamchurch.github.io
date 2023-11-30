@@ -94,7 +94,7 @@ en: &DEFAULT_EN
     events:
       - title: '네 시작은 미약하나 ~'
         year: '2016.10.2 ~ '
-        desc: '첫 주일 예배첫 주일 예배로 서득성 장로의 집(서구 내동 코오롱APT)에서 모이다.'
+        desc: '첫 주일 예배로 서득성 장로의 집(서구 내동 코오롱APT)에서 모이다.'
         image: assets/img/timeline/161030.png
         alt:
       - title: '네 장막 터를 넓히라!'
