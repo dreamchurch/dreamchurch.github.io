@@ -79,6 +79,7 @@ en: &DEFAULT_EN
     carousel:
       id: "carousel_about"
       images:
+        - image: "https://coresos-phinf.pstatic.net/a/37a3d1/g_060Ud018svc8k96mlbafnxj_f0v73q.jpg?type=e1920_std&cors=band"
         - image: "https://coresos-phinf.pstatic.net/a/376h1b/b_16fUd018svch6l5s2e2tebc_f0v73q.jpg?type=e1920_std&cors=band"
         - image: "https://coresos-phinf.pstatic.net/a/36j66c/b_419Ud018svcizfs8zuts5mx_vseem9.jpeg?type=e1920_std&cors=band"
         - image: "https://coresos-phinf.pstatic.net/a/36i31i/d_13gUd018svcuc1zzpp3ssz6_qdf1gi.jpg?type=e1920_std&cors=band"
