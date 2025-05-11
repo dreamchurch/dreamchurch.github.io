@@ -83,7 +83,8 @@ en: &DEFAULT_EN
         - image: "https://coresos-phinf.pstatic.net/a/383777/1_3b5Ud018svcg05tfxt1a5pm_f0v73q.jpg?type=e1920_std&cors=www"
         - image: "https://coresos-phinf.pstatic.net/a/383gc7/0_1iaUd018svcmron6yynjfsq_vseem9.jpeg?type=e1920_std&cors=www"
         - image: "https://coresos-phinf.pstatic.net/a/36i31i/d_13gUd018svcuc1zzpp3ssz6_qdf1gi.jpg?type=e1920_std&cors=band"
-        - image: "https://coresos-phinf.pstatic.net/a/38376f/7_5c5Ud018svc1vpszrecjn361_1zlts2.jpg?type=e1920_std&cors=www"
+        - image: "https://coresos-phinf.pstatic.net/a/384f7c/d_2d2Ud018svc1s4rso7tr61zy_f0v73q.jpg?type=e1920_std&cors=www"
+        - image: "https://coresos-phinf.pstatic.net/a/384f6h/3_ad2Ud018svc1sjrv973v0udc_f0v73q.jpg?type=e1920_std&cors=www"
     section: about
 
   timeline:
