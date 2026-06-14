@@ -1,0 +1,67 @@
+backend:
+  name: github
+  repo: dreamchurch/dreamchurch.github.io
+  branch: main
+  base_url: https://YOUR-NETLIFY-OAUTH-SITE.netlify.app
+
+media_folder: "assets/img/uploads"
+public_folder: "/assets/img/uploads"
+
+locale: ko
+
+collections:
+  - name: "posts"
+    label: "포스트"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{fields.category}}"
+    editor:
+      preview: false
+    fields:
+      - label: "카테고리"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "주일 설교", value: "sermon" }
+          - { label: "찬양", value: "praise" }
+          - { label: "Dream-Log (소식)", value: "blog" }
+
+      - label: "제목"
+        name: "title"
+        widget: "string"
+        hint: "예: 주일 설교"
+
+      - label: "부제목"
+        name: "subtitle"
+        widget: "string"
+        required: false
+        hint: "예: 성령의 검 곧 하나님의 말씀으로 싸워라!"
+
+      - label: "날짜"
+        name: "date"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+
+      - label: "YouTube ID"
+        name: "youtubeId"
+        widget: "string"
+        required: false
+        hint: "YouTube URL에서 v= 뒤의 값 (예: B5kWg-WQ6xw)"
+
+      - label: "본문"
+        name: "body"
+        widget: "markdown"
+        required: false
+        default: "{% include youtubePlayer.html id=page.youtubeId %}\n\n"
+        hint: "YouTube 영상은 위 기본값이 자동으로 포함됩니다. 본문 내용을 아래에 추가하세요."
+
+      - label: "썸네일 제목"
+        name: "caption"
+        widget: "object"
+        required: false
+        fields:
+          - { label: "제목", name: "title", widget: "string", required: false }
+          - { label: "부제목", name: "subtitle", widget: "string", required: false }
+          - { label: "썸네일 URL", name: "thumbnail", widget: "string", required: false }
