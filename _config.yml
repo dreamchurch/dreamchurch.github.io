@@ -31,8 +31,6 @@ locale: 'en-US' # See available languages in _data/sitetext.yml
 analytics:
   google: G-30Y1EVQZ5M
 
-collections:
-  portfolio:
 
 markdown: kramdown
 
