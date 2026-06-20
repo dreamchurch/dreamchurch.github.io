@@ -29,20 +29,5 @@
 		<!-- Modal switching scroll issue modify -->
 		<script src="assets/js/modal_switching.js"></script>
 
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.init({
-        APIUrl: 'https://lucky-sunburst-349736.netlify.app/.netlify/identity'
-      });
-      window.netlifyIdentity.on("init", function(user) {
-        if (!user) {
-          window.netlifyIdentity.on("login", function() {
-            document.location.href = "/admin/";
-          });
-        }
-      });
-    }
-  </script>
   </body>
 </html>

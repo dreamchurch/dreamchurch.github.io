@@ -1,8 +1,8 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: dreamchurch/dreamchurch.github.io
   branch: main
-  identity_url: https://lucky-sunburst-349736.netlify.app/.netlify/identity
-  gateway_url: https://lucky-sunburst-349736.netlify.app/.netlify/git
+  base_url: https://lucky-sunburst-349736.netlify.app
 
 media_folder: 'assets/img/uploads'
 public_folder: '/assets/img/uploads'
