@@ -1,9 +1,6 @@
 backend:
-  name: github
-  repo: dreamchurch/dreamchurch.github.io
+  name: git-gateway
   branch: main
-  base_url: https://dreamch.netlify.app
-  auth_endpoint: auth
 
 media_folder: 'assets/img/uploads'
 public_folder: '/assets/img/uploads'
