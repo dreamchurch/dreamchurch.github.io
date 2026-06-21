@@ -74,3 +74,20 @@ collections:
               widget: 'string',
               required: false,
             }
+
+  - name: 'settings'
+    label: '설정'
+    files:
+      - name: 'carousel'
+        label: 'About Us 캐러셀 사진'
+        file: '_data/carousel.yml'
+        editor:
+          preview: false
+        fields:
+          - label: '사진 목록'
+            name: 'images'
+            widget: 'list'
+            fields:
+              - label: '이미지 URL'
+                name: 'image'
+                widget: 'image'

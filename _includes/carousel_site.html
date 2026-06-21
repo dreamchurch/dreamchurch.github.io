@@ -1,25 +1,25 @@
 <div
-  id="{{ site.data.sitetext[site.locale].about.carousel.id }}"
+  id="carousel_about"
   class="carousel slide mb-3"
   data-ride="carousel"
 >
   <ol class="carousel-indicators">
-    {% for item in site.data.sitetext[site.locale].about.carousel.images %} {%
+    {% for item in site.data.carousel.images %} {%
     if forloop.index0 < 1 %}
     <li
-      data-target="#{{ site.data.sitetext[site.locale].about.carousel.id }}"
+      data-target="#carousel_about"
       data-slide-to="0"
       class="active"
     ></li>
     {% else %}
     <li
-      data-target="#{{ site.data.sitetext[site.locale].about.carousel.id }}"
+      data-target="#carousel_about"
       data-slide-to="{{ forloop.index0 }}"
     ></li>
     {% endif %} {% endfor %}
   </ol>
   <div class="carousel-inner">
-    {% for item in site.data.sitetext[site.locale].about.carousel.images %} {%
+    {% for item in site.data.carousel.images %} {%
     if forloop.index0 == 0 %}
     <div class="carousel-item active">
       <img src="{{ item.image }}" class="d-block w-100 mb-0" alt="" />
@@ -32,7 +32,7 @@
   </div>
   <a
     class="carousel-control-prev"
-    data-target="#{{ site.data.sitetext[site.locale].about.carousel.id }}"
+    data-target="#carousel_about"
     role="button"
     data-slide="prev"
   >
@@ -41,7 +41,7 @@
   </a>
   <a
     class="carousel-control-next"
-    data-target="#{{ site.data.sitetext[site.locale].about.carousel.id }}"
+    data-target="#carousel_about"
     role="button"
     data-slide="next"
   >
