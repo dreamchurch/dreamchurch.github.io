@@ -52,6 +52,7 @@ collections:
         name: 'body'
         widget: 'markdown'
         required: false
+        modes: ['rich_text']
         default: "{% include youtubePlayer.html id=page.youtubeId %}\n\n"
         hint: 'YouTube 영상은 위 기본값이 자동으로 포함됩니다. 본문 내용을 아래에 추가하세요.'
 
