@@ -9,10 +9,10 @@
       </div>
     </div>
     <div class="row">
-    {% for project in site.posts reversed %}
+    {% for project in site.posts %}
       {% if project.category == 'sermon' %}
         <div class="col-md-4 col-sm-6 portfolio-item">
-          <a class="portfolio-link" data-toggle="modal" href="#p{{ forloop.length | minus: forloop.index0 }}">
+          <a class="portfolio-link" data-toggle="modal" href="#p{{ forloop.index }}">
             <div class="portfolio-hover">
               <div class="portfolio-hover-content">
                 <i class="{{ site.data.style.portfolio-icon | default: "fas fa-plus fa-3x" }}"></i>
@@ -28,10 +28,10 @@
         {% break %}
       {% endif %}
     {% endfor %}
-    {% for project in site.posts reversed %}
+    {% for project in site.posts %}
       {% if project.category == 'praise' %}
         <div class="col-md-4 col-sm-6 portfolio-item">
-          <a class="portfolio-link" data-toggle="modal" href="#p{{ forloop.length | minus: forloop.index0 }}">
+          <a class="portfolio-link" data-toggle="modal" href="#p{{ forloop.index }}">
             <div class="portfolio-hover">
               <div class="portfolio-hover-content">
                 <i class="{{ site.data.style.portfolio-icon | default: "fas fa-plus fa-3x" }}"></i>
@@ -47,10 +47,10 @@
         {% break %}
       {% endif %}
     {% endfor %}
-    {% for project in site.posts reversed %}
+    {% for project in site.posts %}
       {% if project.category == 'blog' %}
         <div class="col-md-4 col-sm-6 portfolio-item">
-          <a class="portfolio-link" data-toggle="modal" href="#p{{ forloop.length | minus: forloop.index0 }}">
+          <a class="portfolio-link" data-toggle="modal" href="#p{{ forloop.index }}">
             <div class="portfolio-hover">
               <div class="portfolio-hover-content">
                 <i class="{{ site.data.style.portfolio-icon | default: "fas fa-plus fa-3x" }}"></i>
