@@ -9,5 +9,34 @@
 </head>
 <body>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script>
+    var PostPreview = createClass({
+      render: function() {
+        var entry = this.props.entry;
+        var youtubeId = entry.getIn(['data', 'youtubeId']);
+        var title = entry.getIn(['data', 'title']);
+        var subtitle = entry.getIn(['data', 'subtitle']);
+        var date = entry.getIn(['data', 'date']);
+        var body = this.props.widgetFor('body');
+
+        return h('div', { style: { fontFamily: 'sans-serif', padding: '20px', maxWidth: '800px' } },
+          title && h('h2', { style: { marginBottom: '4px' } }, title),
+          subtitle && h('p', { style: { color: '#666', marginTop: '4px' } }, subtitle),
+          date && h('p', { style: { color: '#999', fontSize: '13px' } }, String(date).slice(0, 10)),
+          youtubeId && h('iframe', {
+            style: { width: '100%', marginTop: '16px' },
+            height: '315',
+            src: 'https://www.youtube.com/embed/' + youtubeId,
+            frameBorder: '0',
+            allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture',
+            allowFullScreen: true
+          }),
+          h('div', { style: { marginTop: '20px' } }, body)
+        );
+      }
+    });
+
+    CMS.registerPreviewTemplate('posts', PostPreview);
+  </script>
 </body>
 </html>
