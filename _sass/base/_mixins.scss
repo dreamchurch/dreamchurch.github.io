@@ -1,8 +1,6 @@
 // Font Mixins
 @mixin serif-font {
-  font-family: "Droid Serif", -apple-system, BlinkMacSystemFont, "Sunflower", sans-serif, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: "Noto Serif KR", serif;
 }
 
 @mixin script-font {
@@ -22,7 +20,5 @@
 }
 
 @mixin heading-font {
-  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Do Hyeon", sans-serif, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: "Noto Sans KR", sans-serif;
 }
