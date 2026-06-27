@@ -256,3 +256,10 @@
     }
   }
 }
+
+@media (max-width: 767px) {
+  .portfolio-modal .modal-body {
+    h3 { font-size: 1.1rem; }
+    h4 { font-size: 0.85rem; }
+  }
+}

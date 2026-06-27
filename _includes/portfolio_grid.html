@@ -25,7 +25,16 @@
         {% endif %}
 
         <div class="col-lg-4 col-md-4 col-sm-6 mb-4 portfolio-card">
-          <a class="portfolio-link" data-toggle="modal" href="#p{{ idx }}" style="text-decoration:none;">
+          {% if project.category == "sermon" or project.category == "praise" %}
+            <a class="portfolio-link yt-card"
+               data-toggle="modal" href="#yt-modal"
+               data-youtube-id="{{ project.youtubeId }}"
+               data-title="{{ project.title }}"
+               data-subtitle="{{ project.subtitle }}"
+               style="text-decoration:none;">
+          {% else %}
+            <a class="portfolio-link" data-toggle="modal" href="#p{{ idx }}" style="text-decoration:none;">
+          {% endif %}
             <div class="card h-100 shadow-sm border-0">
               <div class="card-img-wrapper position-relative overflow-hidden">
                 <img class="card-img-top" src="{{ thumb }}" alt="{{ project.title }}" style="object-fit:cover; height:180px;">
@@ -89,7 +98,16 @@
         {% endif %}
 
         <div class="col-lg-4 col-md-4 col-sm-6 mb-4 portfolio-card">
-          <a class="portfolio-link" data-toggle="modal" href="#p{{ idx }}" style="text-decoration:none;">
+          {% if project.category == "sermon" or project.category == "praise" %}
+            <a class="portfolio-link yt-card"
+               data-toggle="modal" href="#yt-modal"
+               data-youtube-id="{{ project.youtubeId }}"
+               data-title="{{ project.title }}"
+               data-subtitle="{{ project.subtitle }}"
+               style="text-decoration:none;">
+          {% else %}
+            <a class="portfolio-link" data-toggle="modal" href="#p{{ idx }}" style="text-decoration:none;">
+          {% endif %}
             <div class="card h-100 shadow-sm border-0">
               <div class="card-img-wrapper position-relative overflow-hidden">
                 <img class="card-img-top" src="{{ thumb }}" alt="{{ project.title }}" style="object-fit:cover; height:180px;">
@@ -125,11 +143,43 @@
   </div>
 </section>
 {% endif %}
+
 {% include modals.html %}
 
+<!-- YouTube 전용 모달 -->
+<div class="portfolio-modal modal fade" id="yt-modal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="close-modal" data-dismiss="modal">
+        <div class="lr"><div class="rl"></div></div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <div class="modal-body">
+              <h3 id="yt-modal-title" class="text-uppercase"></h3>
+              <h4 id="yt-modal-subtitle" class="item-intro text-muted"></h4>
+              <div class="embed-responsive embed-responsive-16by9 mb-4">
+                <iframe id="yt-modal-iframe"
+                  class="embed-responsive-item"
+                  src=""
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+              </div>
+            </div>
+            <button class="btn btn-primary text-center" data-dismiss="modal" type="button">
+              <i class="fas fa-times"></i> 화면 닫기
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script>
   (function () {
+    // Pagination
     var pageSize = 9;
     var cards = Array.prototype.slice.call(document.querySelectorAll('.portfolio-card'));
     var totalPages = Math.ceil(cards.length / pageSize);
@@ -184,36 +234,25 @@
       showPage(1);
     }
 
+    // YouTube 모달: 카드 클릭 시 iframe src 설정
+    document.querySelectorAll('.yt-card').forEach(function (card) {
+      card.addEventListener('click', function () {
+        var id = card.getAttribute('data-youtube-id');
+        document.getElementById('yt-modal-title').textContent = card.getAttribute('data-title') || '';
+        document.getElementById('yt-modal-subtitle').textContent = card.getAttribute('data-subtitle') || '';
+        document.getElementById('yt-modal-iframe').src = 'https://www.youtube.com/embed/' + id;
+      });
+    });
+
+    // YouTube 모달 닫힐 때 iframe 정지
+    document.addEventListener('click', function (e) {
+      var btn = e.target.closest('[data-dismiss="modal"]');
+      if (!btn) return;
+      var modal = btn.closest('#yt-modal');
+      if (modal) {
+        document.getElementById('yt-modal-iframe').src = '';
+      }
+    }, true);
+
   })();
-
-  // Stop YouTube when any modal closes
-  function stopAndRestoreFacade(modal) {
-    modal.querySelectorAll('iframe').forEach(function (iframe) {
-      try {
-        iframe.contentWindow.postMessage(
-          JSON.stringify({ event: 'command', func: 'stopVideo', args: [] }), '*'
-        );
-      } catch (e) {}
-      iframe.src = 'about:blank';
-    });
-    modal.querySelectorAll('.yt-facade').forEach(function (facade) {
-      var id = facade.getAttribute('data-youtube-id');
-      if (!id) return;
-      facade.innerHTML =
-        '<img src="https://img.youtube.com/vi/' + id + '/maxresdefault.jpg" ' +
-        'style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:0.85;"/>' +
-        '<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);' +
-        'width:68px;height:48px;background:#ff0000;border-radius:12px;' +
-        'display:flex;align-items:center;justify-content:center;pointer-events:none;">' +
-        '<svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M8 5v14l11-7z"/></svg></div>';
-    });
-  }
-
-  // Intercept all modal-dismiss clicks directly — no Bootstrap event dependency
-  document.addEventListener('click', function (e) {
-    var btn = e.target.closest('[data-dismiss="modal"]');
-    if (!btn) return;
-    var modal = btn.closest('.portfolio-modal');
-    if (modal) stopAndRestoreFacade(modal);
-  }, true);
 </script>
