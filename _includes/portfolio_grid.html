@@ -8,65 +8,63 @@
         <h3 class="section-subheading text-muted">{{ site.data.sitetext[site.locale].portfolio.text | markdownify }}</h3>
       </div>
     </div>
-    <div class="row">
-    {% for project in site.posts %}
-      {% if project.category == 'sermon' %}
-        <div class="col-md-4 col-sm-6 portfolio-item">
-          <a class="portfolio-link" data-toggle="modal" href="#p{{ forloop.index }}">
-            <div class="portfolio-hover">
-              <div class="portfolio-hover-content">
-                <i class="{{ site.data.style.portfolio-icon | default: "fas fa-plus fa-3x" }}"></i>
+    <div class="row" id="portfolio-grid">
+      {% for project in site.posts %}
+        {% assign idx = forloop.index %}
+
+        {% if project.youtubeId and project.youtubeId != "" %}
+          {% assign thumb = "https://img.youtube.com/vi/" | append: project.youtubeId | append: "/mqdefault.jpg" %}
+        {% elsif project.caption.thumbnail and project.caption.thumbnail != "" %}
+          {% assign thumb = project.caption.thumbnail %}
+        {% elsif project.category == "sermon" %}
+          {% assign thumb = "assets/img/Sermon_default.jpg" %}
+        {% elsif project.category == "praise" %}
+          {% assign thumb = "assets/img/Praise_default.jpg" %}
+        {% else %}
+          {% assign thumb = "assets/img/News_default.jpg" %}
+        {% endif %}
+
+        <div class="col-lg-4 col-md-4 col-sm-6 mb-4 portfolio-card">
+          <a class="portfolio-link" data-toggle="modal" href="#p{{ idx }}" style="text-decoration:none;">
+            <div class="card h-100 shadow-sm border-0">
+              <div class="card-img-wrapper position-relative overflow-hidden">
+                <img class="card-img-top" src="{{ thumb }}" alt="{{ project.title }}" style="object-fit:cover; height:180px;">
+                <div class="portfolio-hover position-absolute w-100 h-100" style="top:0; left:0;">
+                  <div class="portfolio-hover-content">
+                    <i class="fas fa-play fa-2x"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body px-3 py-2">
+                {% if project.category == "sermon" %}
+                  <span class="badge badge-primary mb-1" style="font-size:0.7rem;">설교</span>
+                {% elsif project.category == "praise" %}
+                  <span class="badge badge-success mb-1" style="font-size:0.7rem;">찬양</span>
+                {% elsif project.category == "blog" %}
+                  <span class="badge badge-secondary mb-1" style="font-size:0.7rem;">소식</span>
+                {% endif %}
+                <h6 class="card-title mb-1 text-dark" style="font-size:0.9rem; line-height:1.3;">{{ project.title }}</h6>
+                {% if project.subtitle %}
+                  <p class="card-text text-muted mb-0" style="font-size:0.78rem;">{{ project.subtitle }}</p>
+                {% endif %}
+              </div>
+              <div class="card-footer bg-white border-0 pt-0 pb-2 px-3">
+                <small class="text-muted">{{ project.date | date: "%Y.%m.%d" }}</small>
               </div>
             </div>
-            <img class="img-fluid" src="assets/img/Sermon_default.jpg" alt="">
           </a>
-          <!-- <div class="portfolio-caption">
-            <h4>{{ project.caption.title }}</h4>
-            <p class="text-muted">{{ project.caption.subtitle }}</p>
-          </div> -->
         </div>
-        {% break %}
-      {% endif %}
-    {% endfor %}
-    {% for project in site.posts %}
-      {% if project.category == 'praise' %}
-        <div class="col-md-4 col-sm-6 portfolio-item">
-          <a class="portfolio-link" data-toggle="modal" href="#p{{ forloop.index }}">
-            <div class="portfolio-hover">
-              <div class="portfolio-hover-content">
-                <i class="{{ site.data.style.portfolio-icon | default: "fas fa-plus fa-3x" }}"></i>
-              </div>
-            </div>
-            <img class="img-fluid" src="assets/img/Praise_default.jpg" alt="">
-          </a>
-          <!-- <div class="portfolio-caption">
-            <h4>{{ project.caption.title }}</h4>
-            <p class="text-muted">{{ project.caption.subtitle }}</p>
-          </div> -->
-        </div>
-        {% break %}
-      {% endif %}
-    {% endfor %}
-    {% for project in site.posts %}
-      {% if project.category == 'blog' %}
-        <div class="col-md-4 col-sm-6 portfolio-item">
-          <a class="portfolio-link" data-toggle="modal" href="#p{{ forloop.index }}">
-            <div class="portfolio-hover">
-              <div class="portfolio-hover-content">
-                <i class="{{ site.data.style.portfolio-icon | default: "fas fa-plus fa-3x" }}"></i>
-              </div>
-            </div>
-            <img class="img-fluid" src="assets/img/News_default.jpg" alt="">
-          </a>
-          <!-- <div class="portfolio-caption">
-            <h4>{{ project.caption.title }}</h4>
-            <p class="text-muted">{{ project.caption.subtitle }}</p>
-          </div>
-        </div> -->
-        {% break %}
-      {% endif %}
-    {% endfor %}
+      {% endfor %}
     </div>
+    {% if site.posts.size > 9 %}
+    <div class="row">
+      <div class="col-12 d-flex justify-content-center mt-2 mb-4">
+        <nav aria-label="portfolio navigation">
+          <ul class="pagination" id="portfolio-pagination"></ul>
+        </nav>
+      </div>
+    </div>
+    {% endif %}
   </div>
 </section>
 {% else %}
@@ -78,25 +76,144 @@
         <h3 class="section-subheading text-muted">{{ site.data.sitetext.portfolio.text | markdownify }}</h3>
       </div>
     </div>
-    <div class="row">
-	{% for project in site.posts %}
-      <div class="col-md-4 col-sm-6 portfolio-item">
-        <a class="portfolio-link" data-toggle="modal" href="#p{{ forloop.index }}">
-          <div class="portfolio-hover">
-            <div class="portfolio-hover-content">
-              <i class="{{ site.data.style.portfolio-icon | default: "fas fa-plus fa-3x" }}"></i>
+    <div class="row" id="portfolio-grid">
+      {% for project in site.posts %}
+        {% assign idx = forloop.index %}
+
+        {% if project.youtubeId and project.youtubeId != "" %}
+          {% assign thumb = "https://img.youtube.com/vi/" | append: project.youtubeId | append: "/mqdefault.jpg" %}
+        {% elsif project.caption.thumbnail and project.caption.thumbnail != "" %}
+          {% assign thumb = project.caption.thumbnail %}
+        {% else %}
+          {% assign thumb = "assets/img/Sermon_default.jpg" %}
+        {% endif %}
+
+        <div class="col-lg-4 col-md-4 col-sm-6 mb-4 portfolio-card">
+          <a class="portfolio-link" data-toggle="modal" href="#p{{ idx }}" style="text-decoration:none;">
+            <div class="card h-100 shadow-sm border-0">
+              <div class="card-img-wrapper position-relative overflow-hidden">
+                <img class="card-img-top" src="{{ thumb }}" alt="{{ project.title }}" style="object-fit:cover; height:180px;">
+                <div class="portfolio-hover position-absolute w-100 h-100" style="top:0; left:0;">
+                  <div class="portfolio-hover-content">
+                    <i class="fas fa-play fa-2x"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body px-3 py-2">
+                <h6 class="card-title mb-1 text-dark" style="font-size:0.9rem; line-height:1.3;">{{ project.title }}</h6>
+                {% if project.subtitle %}
+                  <p class="card-text text-muted mb-0" style="font-size:0.78rem;">{{ project.subtitle }}</p>
+                {% endif %}
+              </div>
+              <div class="card-footer bg-white border-0 pt-0 pb-2 px-3">
+                <small class="text-muted">{{ project.date | date: "%Y.%m.%d" }}</small>
+              </div>
             </div>
-          </div>
-          <img class="img-fluid" src="{{ project.caption.thumbnail }}" alt="">
-        </a>
-        <div class="portfolio-caption">
-          <h4>{{ project.caption.title }}</h4>
-          <p class="text-muted">{{ project.caption.subtitle }}</p>
+          </a>
         </div>
-      </div>
-	{% endfor %}
+      {% endfor %}
     </div>
+    {% if site.posts.size > 9 %}
+    <div class="row">
+      <div class="col-12 d-flex justify-content-center mt-2 mb-4">
+        <nav aria-label="portfolio navigation">
+          <ul class="pagination" id="portfolio-pagination"></ul>
+        </nav>
+      </div>
+    </div>
+    {% endif %}
   </div>
 </section>
 {% endif %}
 {% include modals.html %}
+
+
+<script>
+  (function () {
+    var pageSize = 9;
+    var cards = Array.prototype.slice.call(document.querySelectorAll('.portfolio-card'));
+    var totalPages = Math.ceil(cards.length / pageSize);
+    var currentPage = 1;
+
+    function showPage(page) {
+      cards.forEach(function (card, i) {
+        card.style.display = (i >= (page - 1) * pageSize && i < page * pageSize) ? '' : 'none';
+      });
+      currentPage = page;
+      renderPagination();
+    }
+
+    function renderPagination() {
+      var nav = document.getElementById('portfolio-pagination');
+      if (!nav) return;
+      nav.innerHTML = '';
+
+      function li(label, page, disabled, active) {
+        var item = document.createElement('li');
+        item.className = 'page-item' + (disabled ? ' disabled' : '') + (active ? ' active' : '');
+        var a = document.createElement('a');
+        a.className = 'page-link';
+        a.href = '#portfolio';
+        a.innerHTML = label;
+        if (!disabled) {
+          a.addEventListener('click', function (e) {
+            e.preventDefault();
+            showPage(page);
+          });
+        }
+        item.appendChild(a);
+        nav.appendChild(item);
+      }
+
+      var windowSize = 5;
+      var half = Math.floor(windowSize / 2);
+      var start = Math.max(1, currentPage - half);
+      var end = Math.min(totalPages, start + windowSize - 1);
+      if (end - start + 1 < windowSize) {
+        start = Math.max(1, end - windowSize + 1);
+      }
+
+      li('‹', Math.max(1, currentPage - 5), currentPage === 1, false);
+      for (var p = start; p <= end; p++) {
+        li(p, p, false, p === currentPage);
+      }
+      li('›', Math.min(totalPages, currentPage + 5), currentPage === totalPages, false);
+    }
+
+    if (cards.length > pageSize) {
+      showPage(1);
+    }
+
+  })();
+
+  // Stop YouTube when any modal closes
+  function stopAndRestoreFacade(modal) {
+    modal.querySelectorAll('iframe').forEach(function (iframe) {
+      try {
+        iframe.contentWindow.postMessage(
+          JSON.stringify({ event: 'command', func: 'stopVideo', args: [] }), '*'
+        );
+      } catch (e) {}
+      iframe.src = 'about:blank';
+    });
+    modal.querySelectorAll('.yt-facade').forEach(function (facade) {
+      var id = facade.getAttribute('data-youtube-id');
+      if (!id) return;
+      facade.innerHTML =
+        '<img src="https://img.youtube.com/vi/' + id + '/maxresdefault.jpg" ' +
+        'style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:0.85;"/>' +
+        '<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);' +
+        'width:68px;height:48px;background:#ff0000;border-radius:12px;' +
+        'display:flex;align-items:center;justify-content:center;pointer-events:none;">' +
+        '<svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M8 5v14l11-7z"/></svg></div>';
+    });
+  }
+
+  // Intercept all modal-dismiss clicks directly — no Bootstrap event dependency
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest('[data-dismiss="modal"]');
+    if (!btn) return;
+    var modal = btn.closest('.portfolio-modal');
+    if (modal) stopAndRestoreFacade(modal);
+  }, true);
+</script>

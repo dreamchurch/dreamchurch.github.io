@@ -1,5 +1,70 @@
 // Styling for the portfolio section
+#portfolio-pagination {
+  gap: 4px;
+  border: none;
+
+  .page-item {
+    .page-link {
+      border: none;
+      background: transparent;
+      color: #9a9aaa;
+      font-size: 0.95rem;
+      font-weight: 500;
+      min-width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      padding: 0;
+      transition: color 0.15s ease;
+
+      &:hover {
+        color: #1a1a5e;
+        background: transparent;
+        box-shadow: none;
+      }
+    }
+
+    &.active .page-link {
+      background-color: #1a1a5e;
+      color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(26,26,94,0.3);
+    }
+
+    &.disabled .page-link {
+      color: #d0d0da;
+    }
+  }
+}
+
 #portfolio {
+  .card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15) !important;
+    }
+  }
+
+  .card-img-wrapper {
+    .portfolio-hover {
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      background: fade-out($primary, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    &:hover .portfolio-hover {
+      opacity: 1;
+    }
+    .portfolio-hover-content {
+      color: white;
+    }
+  }
+
   .portfolio-item {
     right: 0;
     margin: 0 0 15px;
