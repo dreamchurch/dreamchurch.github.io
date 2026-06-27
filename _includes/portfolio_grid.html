@@ -180,7 +180,7 @@
 <script>
   (function () {
     // Pagination
-    var pageSize = 9;
+    var pageSize = window.innerWidth < 768 ? 5 : 9;
     var cards = Array.prototype.slice.call(document.querySelectorAll('.portfolio-card'));
     var totalPages = Math.ceil(cards.length / pageSize);
     var currentPage = 1;
