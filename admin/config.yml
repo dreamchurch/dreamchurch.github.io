@@ -22,6 +22,8 @@ collections:
         options:
           - { label: '주일 설교', value: 'sermon' }
           - { label: '찬양', value: 'praise' }
+          - { label: '간증', value: 'testimony' }
+          - { label: '특송', value: 'special' }
           - { label: 'Dream-Log (소식)', value: 'blog' }
 
       - label: '제목'
