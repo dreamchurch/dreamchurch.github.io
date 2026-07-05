@@ -28,6 +28,8 @@ author: Taeseok Sim
 
 locale: 'en-US' # See available languages in _data/sitetext.yml
 
+future: true # Show posts with today's date (timezone-safe for KST builds on GitHub Pages)
+
 analytics:
   google: G-30Y1EVQZ5M
 
