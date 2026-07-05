@@ -93,3 +93,33 @@ collections:
               - label: '이미지 URL'
                 name: 'image'
                 widget: 'image'
+
+      - name: 'team'
+        label: '섬기는 분들'
+        file: '_data/team.yml'
+        editor:
+          preview: false
+        fields:
+          - label: '섹션 제목'
+            name: 'title'
+            widget: 'string'
+          - label: '부제목'
+            name: 'text'
+            widget: 'string'
+          - label: '하단 문구'
+            name: 'subtext'
+            widget: 'string'
+          - label: '팀원 목록'
+            name: 'people'
+            widget: 'list'
+            fields:
+              - label: '이름'
+                name: 'name'
+                widget: 'string'
+              - label: '직책'
+                name: 'role'
+                widget: 'string'
+                required: false
+              - label: '사진'
+                name: 'image'
+                widget: 'image'
