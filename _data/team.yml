@@ -1,13 +1,15 @@
-title: '섬기는 분들'
-text: 'staffs of Dream Church'
+title: 섬기는 분들
+text: staffs of Dream Church
 subtext: 부지런하여 게으르지 말고 열심을 품고 주를 섬기라(롬12:11)는 말씀을 따라, 교회와 성도와 세상을 섬기겠습니다!
 section: team
 people:
-  - name: '서민우 목사'
-    role: '담임목사'
+  - name: 서민우 목사
+    role: 담임목사
     image: assets/img/team/Pastor_seo.jpg
     social: []
-  - name: '김희영 사모'
-    role: ''
+  - name: 김희영 사모
+    role: ""
     image: assets/img/team/Mrs_seo.jpg
     social: []
+  - name: 이상하 전도사
+    image: /assets/img/uploads/스크린샷-2026-07-05-오후-2.00.52.png
